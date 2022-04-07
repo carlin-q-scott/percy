@@ -1,4 +1,10 @@
-FROM node:lts-alpine
+# Percy.io CLI
+# https://github.com/carlin-q-scott/percy
+# https://hub.docker.com/repository/docker/carlin/percy
 
+FROM zenika/alpine-chrome:with-node
+USER root
 RUN npm install -g @percy/cli
+USER chrome
+ENTRYPOINT []
 CMD ["percy"]
